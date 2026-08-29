@@ -1,0 +1,1 @@
+enum tpForma {Quadradro, Circulo, Triangulo, Retangulo}
