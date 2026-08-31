@@ -1,5 +1,8 @@
 import 'padrao.dart' as padrao;
 import 'com_parametro.dart' as com_parametro;
+import 'inicializacao_formal.dart' as inic_formal;
+import 'obrigatorio_nomeado.dart' as ob_nomeado;
+import 'opcional_nomeado.dart' as op_nomeado;
 
 void main(List<String> args) {
   final carroGTR = padrao.Carro();
@@ -12,4 +15,32 @@ void main(List<String> args) {
 
   final carroGTR1 = com_parametro.Carro('Nissan', 'GTR', 2012, 2011, true);
   carroGTR1.imprimedados();
+
+  print(
+    "\n Criando uma instancia de uma classe om construtor com inicialização formal",
+  );
+
+  final carroGTR2 = inic_formal.Carro('Nissan', "GTR", 2012, 2011, true);
+  carroGTR2.imprimedados();
+
+  print(
+    "\n Criando uma instancia de uma classe om construtor obrigatório nomeado",
+  );
+  final carroGTR3 = ob_nomeado.Carro(
+    fabricante: 'Nissan',
+    modelo: "GTR",
+    anoFabricacao: 2012,
+    anoModelo: 2011,
+    temABS: true,
+  );
+  carroGTR3.imprimedados();
+
+  print(
+    "\n Criando uma instancia de uma classe om construtor opcional nomeado",
+  );
+  final carroGTR4 = op_nomeado.Carro(fabricante: 'Nissan', modelo: 'GTR');
+  carroGTR4.imprimedados();
+
+print("\nPrint usando o @override");
+  print(carroGTR4);
 }
